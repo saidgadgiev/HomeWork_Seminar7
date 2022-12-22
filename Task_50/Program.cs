@@ -34,21 +34,11 @@ int[,] InitMatrix(int rows, int columns)
         for (int j = 0; j < columns; j++)
         {
             matrix[i, j] = rnd.Next(1, 20);
-        }
-    }
-    return matrix;
-}
-
-void PrintMatrix(int[,] matrix)
-{
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
             Console.Write(matrix[i, j] + " ");
         }
         Console.WriteLine();
     }
+    return matrix;
 }
 
 void FindNumber(int[,] matrix, int number)
@@ -73,6 +63,5 @@ int columns = GetNumber("Введите количество столбцов ->
 int number = GetNumber("Введите число для поиска -> ");
 int[,] matrix = InitMatrix(rows, columns);
 
-PrintMatrix(matrix);
 Console.WriteLine();
 FindNumber(matrix, number);
